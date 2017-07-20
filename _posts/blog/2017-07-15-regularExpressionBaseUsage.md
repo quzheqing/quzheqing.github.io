@@ -1,15 +1,13 @@
 ---
 layout:     post
-title:      【正则表达式系列】基本用法
+title:      【Vue2.0】element框架分页使用
 category: blog
-tags: 正则表达式
-favour: 正则表达式
-description: 正则表达式的一些基本用法，match，test，exec，replace等
+tags: vue+element分页
+favour: vue+element分页
+description: vue中使用element时，结合table使用的分页功能
 ---
 
 ## 前言
-
-本文属于 正则表达式系列文章之一，更多请前往  [正则表达式系列](http://www.jianshu.com/p/d04be43416fb)
 
 在`快速入门`一文中，示例都是通过`test()`方法演示，本文会继续介绍正则的其它用法(以`JS`语言为例)
 
@@ -45,10 +43,16 @@ description: 正则表达式的一些基本用法，match，test，exec，replac
 
 有两种方法可以创建并得到一个正则表达式对象
 
-- 字面量声明方式
+- HTML代码
 
   ```js
   var reg = /abc/g; 
+  <div id="page-box" class="col-md-10">
+	<div class="block">
+	   <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[10, 20, 30, 40]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="pages">
+	   </el-pagination>
+	</div>
+  </div>
   ```
 
 - 显式创建
@@ -348,7 +352,7 @@ str.search(/efg/g); // 4
 str.search(/aabc/g); // -1
 ```
 
-### 字符串的split()
+### 字符串的123
 
 `split`方法可以让一个字符串分割成数组，同样忽略`g`
 
